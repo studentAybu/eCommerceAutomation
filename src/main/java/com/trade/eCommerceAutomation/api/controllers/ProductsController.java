@@ -13,18 +13,16 @@ import com.trade.eCommerceAutomation.entities.concretes.Product;
 @RestController
 @RequestMapping("/api/products")
 public class ProductsController {
-	
-	
-	private ProductService productService;
-	
-	
-	@Autowired
-	public ProductsController(ProductService productService) {
-		super();
-		this.productService = productService;
-	}
-	@GetMapping("/getall")
-	public List<Product> getAll(){
-		return this.productService.getAll();
-	}
+    
+    private ProductService productService;
+    
+    @Autowired
+    public ProductsController(ProductService productService) {
+        this.productService = productService;
+    }
+    
+    @GetMapping("/getall")
+    public List<Product> getAll() {
+        return this.productService.getAll();
+    }
 }
